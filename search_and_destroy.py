@@ -1,16 +1,17 @@
 
-print('\nSearch and replace or destroy\n')
+print('\nSearch and replace or destroy')
 
 def search_and_destroy():
     sentence = input('Enter your sentence: ')
     find = input('Enter the word to replace: ')
     found = False
     sentence = sentence.split(' ')
-    print(len(sentence))
-    for i in range(len(sentence)):
-        if find == sentence[i]:
+    x = 0
+    for i in sentence:
+        if find in i:
             found = True
-            sentence.pop(i)
+            sentence.pop(x)
+        x += 1
     sentence = ' '.join(sentence)
     if found == False:
         return print('Could not found the word to replace')
@@ -24,11 +25,13 @@ def search_and_replace():
     replc = input('Enter the word to be replace with: ')
     found = False
     sentence = sentence.split(' ')
-    for x in range(len(sentence)):
-        if find == sentence[x]:
+    i = 0
+    for x in sentence:
+        if find == x:
             found = True
-            sentence.pop(x)
-            sentence[x] = replc
+            sentence.pop(i)
+            sentence[i] = replc
+        i += 1
     sentence = ' '.join(sentence)
     if found == False:
         return print('Could not found the word to replace')
