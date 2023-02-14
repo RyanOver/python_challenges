@@ -89,7 +89,9 @@ def menu():
             menu()
             break
         if user == 3:
-            break
-        else:
-            print('This is not a valid choice')
-            menu()
+            exit
+        
+        print('This is not a valid choice')
+        menu()
+
+menu()
