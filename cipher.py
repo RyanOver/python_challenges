@@ -2,6 +2,7 @@
 TITLE = 'Caesar Cipher'
 print(TITLE)
 
+# TODO: Skip the spaces, leave them as 32
 
 def cipher():
     """This function will encrypt the inputed text"""
@@ -90,7 +91,6 @@ def menu():
             break
         if user == 3:
             exit
-        
         print('This is not a valid choice')
         menu()
 
