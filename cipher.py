@@ -22,8 +22,6 @@ def cipher():
 
     encrypted = ""
 
-    print(sentence_ascii)
-
     for i in sentence_ascii:
         if i + key > 122:
             a = ((i + key) - 122) + 97 - 1
@@ -58,15 +56,19 @@ def decipher():
     decrypted = ""
 
     for i in sentence_ascii:
-        if i - key < 97:
+        if i == 32:
+            encrypted_ascii.append(32)
+        elif i - key < 97:
             a = ((i - key) + 122) - 97 + 1
             encrypted_ascii.append(a)
         else:
             c = i - key
             encrypted_ascii.append(c)
-
+    
+    print(encrypted_ascii)
+    
     for i in encrypted_ascii:
-        if i == (((32 - key) + 122) - 97):
+        if i == 32:
             decrypted += ' '
         else:
             decrypted += chr(i)
